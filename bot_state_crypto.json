@@ -1,0 +1,41 @@
+{
+  "chats": {
+    "7999276239": {
+      "tz": "Europe/London",
+      "freq_min": 5,
+      "portfolio": {
+        "ETH/USDT": 1.0128,
+        "BTC/USDT": 0.020484,
+        "XRP/USDT": 116.933,
+        "SOL/USDT": 1.0522,
+        "DOGE/USDT": 565.46,
+        "OMNI/USDC": 1.017
+      },
+      "alerts": {},
+      "fourh_enabled": true,
+      "fourh_up_enabled": true,
+      "fourh_threshold_pct": 0.5,
+      "fourh_up_threshold_pct": 0.5,
+      "symbols": [
+        "BTC/USDT",
+        "ETH/USDT"
+      ]
+    },
+    "598559819": {
+      "tz": "Europe/London",
+      "freq_min": 1,
+      "portfolio": {
+        "ETH/USDT": 1.0
+      },
+      "alerts": {},
+      "fourh_enabled": true,
+      "fourh_up_enabled": true,
+      "fourh_threshold_pct": 3.0,
+      "fourh_up_threshold_pct": 3.0,
+      "symbols": [
+        "BTC/USDT",
+        "ETH/USDT"
+      ]
+    }
+  }
+}

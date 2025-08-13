@@ -70,15 +70,16 @@ except LookupError:
     nltk.download('vader_lexicon')
 
 # --------------------------- Config ---------------------------
-DATA_PATH = os.getenv("BOT_STATE_PATH", "./bot_state.json")
 DEFAULT_TZ = "Europe/London"
-DEFAULT_FREQ_MIN = int(os.getenv("DEFAULT_FREQ_MIN", "1440"))  # daily
 NEWS_DAYS = int(os.getenv("NEWS_DAYS", "5"))
-NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")  # optional
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-LONG_POLL_TIMEOUT = int(os.getenv("LONG_POLL_TIMEOUT", "50"))
-DEFAULT_4H_THRESHOLD = float(os.getenv("FOURH_THRESHOLD_PCT", "3.0"))       # drop threshold (%)
-DEFAULT_4H_UP_THRESHOLD = float(os.getenv("FOURH_UP_THRESHOLD_PCT", "3.0")) # profit threshold (%)
+TELEGRAM_BOT_TOKEN = os.getenv("STOCKS_TELEGRAM_BOT_TOKEN") or os.getenv("TELEGRAM_BOT_TOKEN")
+DATA_PATH = os.getenv("STOCKS_BOT_STATE_PATH") or os.getenv("BOT_STATE_PATH", "./bot_state.json")
+DEFAULT_FREQ_MIN = int(os.getenv("STOCKS_DEFAULT_FREQ_MIN") or os.getenv("DEFAULT_FREQ_MIN") or "1440")
+LONG_POLL_TIMEOUT = int(os.getenv("STOCKS_LONG_POLL_TIMEOUT") or os.getenv("LONG_POLL_TIMEOUT") or "50")
+DEFAULT_4H_THRESHOLD = float(os.getenv("STOCKS_FOURH_THRESHOLD_PCT") or os.getenv("FOURH_THRESHOLD_PCT") or "3.0")
+DEFAULT_4H_UP_THRESHOLD = float(os.getenv("STOCKS_FOURH_UP_THRESHOLD_PCT") or os.getenv("FOURH_UP_THRESHOLD_PCT") or "3.0")
+NEWSAPI_KEY = os.getenv("STOCKS_NEWSAPI_KEY") or os.getenv("NEWSAPI_KEY")
+
 
 if TELEGRAM_BOT_TOKEN is None:
     raise SystemExit("ERROR: TELEGRAM_BOT_TOKEN must be set (in environment or .env).")
